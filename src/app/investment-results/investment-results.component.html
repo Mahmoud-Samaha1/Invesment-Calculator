@@ -1,0 +1,29 @@
+<div class="">
+  <table class="">
+    <thead>
+      <tr>
+        <th>year</th>
+        <th>Investment Value</th>
+        <th>inerest (year)</th>
+        <th>total inerest</th>
+        <th>invested capital</th>
+      </tr>
+    </thead>
+    @if(results()){
+    <tbody>
+      @for (result of results(); track $index) {
+      <tr class="">
+        <td>{{result.year}}</td>
+        <td>{{result.valueEndOfYear | currency}}</td>
+        <td>{{result.interest | currency}}</td>
+        <td>{{result.totalInterest | currency}}</td>
+        <td>{{result.totalAmountInvested | currency}}</td>
+      </tr>
+      } @empty {
+      <p>Please fill the INPUTS</p>
+      }
+    </tbody>
+    }
+
+  </table>
+</div>
